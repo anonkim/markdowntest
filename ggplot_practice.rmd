@@ -40,7 +40,7 @@ qplot(wt, mpg, data=mtcars, colour=qsec, size=I(3))
 qplot(wt, mpg, data=mtcars, alpha=qsec)
 ```
 
-```{r}
+```{r,fig.width=6,fig.height=3}
 library(gridExtra)
 head(mtcars,3)
 p1=qplot(wt,mpg,data=mtcars,colour=cyl)
