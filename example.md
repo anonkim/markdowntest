@@ -22,36 +22,11 @@ Writing R markdown, you can insert R code chunks including plots:
  Table
 
     fit<-lm(speed~dist,data=cars)
-    tab<-summary(fit)$coef
-    knitr::kable(tab,format="markdown",caption="this is a caption")
+    summary(fit)$coef
 
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="right">Estimate</th>
-<th align="right">Std. Error</th>
-<th align="right">t value</th>
-<th align="right">Pr(&gt;|t|)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">(Intercept)</td>
-<td align="right">8.2839056</td>
-<td align="right">0.8743845</td>
-<td align="right">9.473985</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">dist</td>
-<td align="right">0.1655676</td>
-<td align="right">0.0174945</td>
-<td align="right">9.463990</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
+    ##              Estimate Std. Error  t value     Pr(>|t|)
+    ## (Intercept) 8.2839056 0.87438449 9.473985 1.440974e-12
+    ## dist        0.1655676 0.01749448 9.463990 1.489836e-12
 
 <table>
 <thead>
