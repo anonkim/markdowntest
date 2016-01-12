@@ -1,0 +1,22 @@
+---
+        output:
+        md_document:
+        variant: markdown_github
+---
+        
+ggplot practice
+===============
+        
+```{r}
+library(ggplot2)
+library(datasets)
+head(diamonds)
+head(mtcars)
+
+## qplot
+qplot(clarity,data=diamonds,fill=cut,geom="bar")
+
+## ggplot histogram
+ggplot(diamonds,aes(clarity,fill=cut))+geom_bar()
+
+```
