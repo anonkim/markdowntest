@@ -16,3 +16,8 @@ summary(cars)
 qplot(speed,dist,data=cars)+
         geom_smooth()
 ```
+
+Table
+```{r}
+knitr::kable(cars$dist)
+```
