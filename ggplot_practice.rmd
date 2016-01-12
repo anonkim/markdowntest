@@ -30,3 +30,20 @@ qplot(wt,mpg,data=mtcars)
 qplot(log(wt),mpg-10,data=mtcars)
 qplot(wt,mpg,data=mtcars,color=qsec)
 ```
+
+
+```{r}
+# change size of points (hint: color/colour, hint: set aesthetic/mapping)
+qplot(wt, mpg, data=mtcars, color=qsec, size=3)
+qplot(wt, mpg, data=mtcars, colour=qsec, size=I(3))
+# use alpha blending
+qplot(wt, mpg, data=mtcars, alpha=qsec)
+```
+
+```{r}
+head(mtcars,3)
+qplot(wt,mpg,data=mtcars,colour=cyl)
+levels(mtcars$cyl)
+qplot(wt,mpg,data=mtcars,colour=factor(cyl))
+```
+

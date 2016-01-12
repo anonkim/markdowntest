@@ -37,4 +37,37 @@ ggplot practice
 
     qplot(wt,mpg,data=mtcars,color=qsec)
 
-![](ggplot_practice_files/figure-markdown_strict/qplot-3.png)
+![](ggplot_practice_files/figure-markdown_strict/qplot-3.png)  
+
+    # change size of points (hint: color/colour, hint: set aesthetic/mapping)
+    qplot(wt, mpg, data=mtcars, color=qsec, size=3)
+
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-3-1.png)  
+
+    qplot(wt, mpg, data=mtcars, colour=qsec, size=I(3))
+
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-3-2.png)  
+
+    # use alpha blending
+    qplot(wt, mpg, data=mtcars, alpha=qsec)
+
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-3-3.png)  
+
+    head(mtcars,3)
+
+    ##                mpg cyl disp  hp drat    wt  qsec vs am gear carb
+    ## Mazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+    ## Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+    ## Datsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+
+    qplot(wt,mpg,data=mtcars,colour=cyl)
+
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-4-1.png)  
+
+    levels(mtcars$cyl)
+
+    ## NULL
+
+    qplot(wt,mpg,data=mtcars,colour=factor(cyl))
+
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-4-2.png)
