@@ -28,6 +28,9 @@ Writing R markdown, you can insert R code chunks including plots:
     ## (Intercept) 8.2839056 0.87438449 9.473985 1.440974e-12
     ## dist        0.1655676 0.01749448 9.463990 1.489836e-12
 
+this is a table manually constructed
+------------------------------------
+
 <table>
 <thead>
 <tr class="header">
