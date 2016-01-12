@@ -25,7 +25,7 @@ ggplot(diamonds,aes(clarity,fill=cut))+geom_bar()
 
 ```
 
-```{r,figure.width=4,figure.height=3}
+```{r qplot, fig.width=4,fig.height=3,message=FALSE}
 qplot(wt,mpg,data=mtcars)
 qplot(log(wt),mpg-10,data=mtcars)
 qplot(wt,mpg,data=mtcars,color=qsec)

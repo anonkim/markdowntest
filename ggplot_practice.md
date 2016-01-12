@@ -29,12 +29,12 @@ ggplot practice
 
     qplot(wt,mpg,data=mtcars)
 
-![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-3-1.png)  
+![](ggplot_practice_files/figure-markdown_strict/qplot-1.png)  
 
     qplot(log(wt),mpg-10,data=mtcars)
 
-![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-3-2.png)  
+![](ggplot_practice_files/figure-markdown_strict/qplot-2.png)  
 
     qplot(wt,mpg,data=mtcars,color=qsec)
 
-![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-3-3.png)
+![](ggplot_practice_files/figure-markdown_strict/qplot-3.png)
