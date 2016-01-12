@@ -20,5 +20,12 @@ qplot(speed,dist,data=cars)+
 Table
 ```{r}
 fit<-lm(speed~dist,data=cars)
-summary(fit)$coef
+tab<-summary(fit)$coef
+knitr::kable(tab)
 ```
+
+| alpha | beta |
+|-----: |:---- |
+| 11    | aa   |
+| 22    | bb   |
+| 33    | cc   |

@@ -22,8 +22,56 @@ Writing R markdown, you can insert R code chunks including plots:
  Table
 
     fit<-lm(speed~dist,data=cars)
-    summary(fit)$coef
+    tab<-summary(fit)$coef
+    knitr::kable(tab)
 
-    ##              Estimate Std. Error  t value     Pr(>|t|)
-    ## (Intercept) 8.2839056 0.87438449 9.473985 1.440974e-12
-    ## dist        0.1655676 0.01749448 9.463990 1.489836e-12
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Estimate</th>
+<th align="right">Std. Error</th>
+<th align="right">t value</th>
+<th align="right">Pr(&gt;|t|)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">8.2839056</td>
+<td align="right">0.8743845</td>
+<td align="right">9.473985</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">dist</td>
+<td align="right">0.1655676</td>
+<td align="right">0.0174945</td>
+<td align="right">9.463990</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr class="header">
+<th align="right">alpha</th>
+<th align="left">beta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">aa</td>
+</tr>
+<tr class="even">
+<td align="right">22</td>
+<td align="left">bb</td>
+</tr>
+<tr class="odd">
+<td align="right">33</td>
+<td align="left">cc</td>
+</tr>
+</tbody>
+</table>
