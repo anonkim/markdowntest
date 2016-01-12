@@ -42,6 +42,13 @@ qplot(wt, mpg, data=mtcars, alpha=qsec)
 
 ```{r,fig.width=6,fig.height=3}
 library(gridExtra)
+p1=qplot(wt, mpg, data=mtcars, shape=factor(cyl))
+p2=qplot(wt, mpg, data=mtcars, size=qsec)
+grid.arrange(p1,p2,ncol=2)
+```
+
+```{r,fig.width=8,fig.height=3}
+
 head(mtcars,3)
 p1=qplot(wt,mpg,data=mtcars,colour=cyl)
 levels(mtcars$cyl)
@@ -50,20 +57,34 @@ grid.arrange(p1,p2,ncol=2)
 ```
 
 ```{r,fig.width=8,fig.height=3}
-library(gridExtra)
-head(mtcars,3)
-p1=qplot(wt,mpg,data=mtcars,colour=cyl)
-levels(mtcars$cyl)
-p2=qplot(wt,mpg,data=mtcars,colour=factor(cyl))
+p1=qplot(wt, mpg, data=mtcars, size=qsec, color=factor(carb))
+p2=qplot(wt, mpg, data=mtcars, size=qsec, color=factor(carb), shape=I(1))
+p3=qplot(wt, mpg, data=mtcars, size=qsec, shape=factor(cyl), geom="point")
+p4=qplot(wt, mpg, data=mtcars, size=factor(cyl), geom="point")
+grid.arrange(p1,p2,ncol=2)
+grid.arrange(p3,p4,ncol=4)
+```
+
+
+```{r,fig.width=8,fig.height=3}
+p1=qplot(factor(cyl), data=mtcars, geom="bar")
+p2=qplot(factor(cyl), data=mtcars, geom="bar") + coord_flip()
 grid.arrange(p1,p2,ncol=2)
 ```
 
 ```{r,fig.width=8,fig.height=3}
-library(gridExtra)
-head(mtcars,3)
-p1=qplot(wt,mpg,data=mtcars,colour=cyl)
-levels(mtcars$cyl)
-p2=qplot(wt,mpg,data=mtcars,colour=factor(cyl))
-grid.arrange(p1,p2,nrow=2)
+# difference between fill/color bars
+qplot(factor(cyl), data=mtcars, geom="bar", fill=factor(cyl))
+qplot(factor(cyl), data=mtcars, geom="bar", colour=factor(cyl))
+grid.arrange(p1,p2,ncol=2)
+# fill by variable
+qplot(factor(cyl), data=mtcars, geom="bar", fill=factor(gear))
 ```
+
+
+
+
+
+
+
 

@@ -54,24 +54,12 @@ ggplot practice
 ![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-3-3.png)  
 
     library(gridExtra)
-    head(mtcars,3)
-
-    ##                mpg cyl disp  hp drat    wt  qsec vs am gear carb
-    ## Mazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-    ## Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-    ## Datsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-
-    p1=qplot(wt,mpg,data=mtcars,colour=cyl)
-    levels(mtcars$cyl)
-
-    ## NULL
-
-    p2=qplot(wt,mpg,data=mtcars,colour=factor(cyl))
+    p1=qplot(wt, mpg, data=mtcars, shape=factor(cyl))
+    p2=qplot(wt, mpg, data=mtcars, size=qsec)
     grid.arrange(p1,p2,ncol=2)
 
 ![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-4-1.png)  
 
-    library(gridExtra)
     head(mtcars,3)
 
     ##                mpg cyl disp  hp drat    wt  qsec vs am gear carb
@@ -89,20 +77,38 @@ ggplot practice
 
 ![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-5-1.png)  
 
-    library(gridExtra)
-    head(mtcars,3)
+    p1=qplot(wt, mpg, data=mtcars, size=qsec, color=factor(carb))
+    p2=qplot(wt, mpg, data=mtcars, size=qsec, color=factor(carb), shape=I(1))
+    p3=qplot(wt, mpg, data=mtcars, size=qsec, shape=factor(cyl), geom="point")
+    p4=qplot(wt, mpg, data=mtcars, size=factor(cyl), geom="point")
+    grid.arrange(p1,p2,ncol=2)
 
-    ##                mpg cyl disp  hp drat    wt  qsec vs am gear carb
-    ## Mazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-    ## Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-    ## Datsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-6-1.png)  
 
-    p1=qplot(wt,mpg,data=mtcars,colour=cyl)
-    levels(mtcars$cyl)
+    grid.arrange(p3,p4,ncol=4)
 
-    ## NULL
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-6-2.png)  
 
-    p2=qplot(wt,mpg,data=mtcars,colour=factor(cyl))
-    grid.arrange(p1,p2,nrow=2)
+    p1=qplot(factor(cyl), data=mtcars, geom="bar")
+    p2=qplot(factor(cyl), data=mtcars, geom="bar") + coord_flip()
+    grid.arrange(p1,p2,ncol=2)
 
-![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-7-1.png)  
+
+    # difference between fill/color bars
+    qplot(factor(cyl), data=mtcars, geom="bar", fill=factor(cyl))
+
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-8-1.png)  
+
+    qplot(factor(cyl), data=mtcars, geom="bar", colour=factor(cyl))
+
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-8-2.png)  
+
+    grid.arrange(p1,p2,ncol=2)
+
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-8-3.png)  
+
+    # fill by variable
+    qplot(factor(cyl), data=mtcars, geom="bar", fill=factor(gear))
+
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-8-4.png)
