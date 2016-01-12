@@ -19,5 +19,6 @@ qplot(speed,dist,data=cars)+
 
 Table
 ```{r}
-knitr::kable(cars$dist)
+fit<-lm(speed~dist,data=cars)
+summary(fit)$coef
 ```
