@@ -69,4 +69,22 @@ ggplot practice
     p2=qplot(wt,mpg,data=mtcars,colour=factor(cyl))
     grid.arrange(p1,p2,ncol=2)
 
-![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-4-1.png)  
+
+    library(gridExtra)
+    head(mtcars,3)
+
+    ##                mpg cyl disp  hp drat    wt  qsec vs am gear carb
+    ## Mazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+    ## Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+    ## Datsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+
+    p1=qplot(wt,mpg,data=mtcars,colour=cyl)
+    levels(mtcars$cyl)
+
+    ## NULL
+
+    p2=qplot(wt,mpg,data=mtcars,colour=factor(cyl))
+    grid.arrange(p1,p2,ncol=2)
+
+![](ggplot_practice_files/figure-markdown_strict/unnamed-chunk-5-1.png)
