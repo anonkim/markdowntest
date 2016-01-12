@@ -23,7 +23,7 @@ Writing R markdown, you can insert R code chunks including plots:
 
     fit<-lm(speed~dist,data=cars)
     tab<-summary(fit)$coef
-    knitr::kable(tab)
+    knitr::kable(tab,format="markdown",caption="this is a caption")
 
 <table>
 <thead>
