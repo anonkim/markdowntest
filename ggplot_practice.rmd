@@ -12,13 +12,21 @@ ggplot practice
 ```{r}
 library(ggplot2)
 library(datasets)
-head(diamonds)
-head(mtcars)
+head(diamonds,3)
+head(cars,3)
+```
 
+```{r}
 ## qplot
 qplot(clarity,data=diamonds,fill=cut,geom="bar")
 
 ## ggplot histogram
 ggplot(diamonds,aes(clarity,fill=cut))+geom_bar()
 
+```
+
+```{r}
+qplot(wt,mpg,data=mtcars)
+qplot(log(wt),mpg-10,data=mtcars)
+qplot(wt,mpg,data=mtcars,color=qsec)
 ```
