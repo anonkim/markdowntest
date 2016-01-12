@@ -7,6 +7,7 @@ R code chunks
 =============
 
 Writing R markdown, you can insert R code chunks including plots:
+=================================================================
 
     # quick summary and plot
     library(ggplot2)
