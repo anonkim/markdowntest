@@ -3,17 +3,11 @@ output:
         md_document:
         variant: markdown_github
 ---
-This is a test
-==============
-==============  
-
 
 R code chunks
 =============================================
 
 Writing R markdown, you can insert R code chunks including plots:
-=================
-
 
 ```{r qplot, fig.width=4,fig.height=3,message=FALSE}
 # quick summary and plot
