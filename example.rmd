@@ -24,6 +24,8 @@ summary(fit)$coef
 
 ```
 
+## this is a table manually constructed  
+
 | alpha | beta |
 |-----: |:---- |
 | 11    | aa   |
